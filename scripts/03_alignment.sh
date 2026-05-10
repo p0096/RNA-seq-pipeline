@@ -1,24 +1,19 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 mkdir -p results/alignment
 
-echo "Running HISAT2..."
+echo "Starting HISAT2 alignment"
 
 hisat2 \
   -p 4 \
   -x genome/grch38/genome \
   -1 results/trimmed/R1.trim.fastq.gz \
   -2 results/trimmed/R2.trim.fastq.gz \
-  -S results/alignment/alignment.sam
-
-echo "Converting to BAM..."
-
-samtools view -bS results/alignment/alignment.sam > results/alignment/alignment.bam
-
-samtools sort results/alignment/alignment.bam -o results/alignment/alignment.sorted.bam
+| samtools view -bS - \
+| samtools sort -o results/alignment/alignment.sorted.bam
 
 samtools index results/alignment/alignment.sorted.bam
 
-echo "Alignment done"
+echo "Alignment completed successfully"
