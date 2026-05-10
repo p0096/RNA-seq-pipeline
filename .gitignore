@@ -1,0 +1,7 @@
+data/
+genome/
+*.fastq.gz
+*.bam
+*.sam
+*.ht2
+results/trimmed/
