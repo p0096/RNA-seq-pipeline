@@ -76,7 +76,7 @@ rna-seq-pipeline/
 
 └── .gitignore
 
-```bash
+```
 
 ---
 
