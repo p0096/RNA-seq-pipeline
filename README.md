@@ -40,6 +40,8 @@ FASTQ → QC → trimming → alignment → BAM → counts → DE analysis
 
 ## Project Structure
 
+```bash
+
 rna-seq-pipeline/
 
 ├── data/                  # raw FASTQ files
@@ -73,6 +75,8 @@ rna-seq-pipeline/
 ├── README.md
 
 └── .gitignore
+
+```bash
 
 ---
 
