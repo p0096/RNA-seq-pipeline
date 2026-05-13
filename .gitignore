@@ -1,24 +1,20 @@
-# Raw sequencing data
-data/
+# Ignore outputs
+data/*
+genome/*
+results/*
 
-# Genome and indexes
-genome/
+# Keep folder structure
+!data/README.md
+!genome/README.md
+!results/README.md
 
-# Trimmed reads
-results/trimmed/
+# Alignment files (redundante pero ok si quieres ser explícito)
+*.bam
+*.sam
+*.bai
 
-# QC reports
-results/qc/*.html
-results/qc/*.zip
-results/qc/*.json
-
-# Alignment files
-results/alignment/*.sam
-results/alignment/*.bam
-results/alignment/*.bai
-
-# FASTQ files
+# FASTQ
 *.fastq.gz
 
-# HISAT2 indexes
-*.ht2
+# HISAT2 index
+*.ht2*
